@@ -41,3 +41,15 @@ int Help(void) {
     return n;
 }
 
+void Copy(const tstring& old_path, const tstring& new_path, bool move) {
+    int     op;
+    bool    exist = false, all = false;
+    BOOL    ret;
+    DWORD   fg;
+    HANDLE  fp;
+    tstring src, dst;
+    WIN32_FIND_DATA fd;
+    stack<tstring> srm;
+    stack<pair<tstring, tstring> > fs;
+
+    
